@@ -1,0 +1,77 @@
+{
+  "local": {
+    "name": "development",
+    "api": {
+      "main": {
+        "apiEndpoint": "//api.staging.namara.io/v0",
+        "baseUrl": "//api.staging.namara.io"
+      },
+      "marketplace": {
+        "apiEndpoint": "//api.staging.namara.io/v0",
+        "baseUrl": "//api.staging.namara.io"
+      }
+    },
+    "mapboxAPIToken": "pk.eyJ1IjoiYnJlbmRhbjYiLCJhIjoiWEgyemVNcyJ9.kzcRQ_3oUAK5M2rtPonZAg",
+    "mapboxStyle": "mapbox://styles/brendan6/ciufmdelf007v2iplttawsa2a"
+  },
+  "staging": {
+    "name": "staging",
+    "api": {
+      "main": {
+        "apiEndpoint": "//api.staging.namara.io/v0",
+        "baseUrl": "//api.staging.namara.io"
+      },
+      "marketplace": {
+        "apiEndpoint": "//api.staging.namara.io/v0",
+        "baseUrl": "//api.staging.namara.io"
+      }
+    },
+    "mapboxAPIToken": "pk.eyJ1IjoiYnJlbmRhbjYiLCJhIjoiWEgyemVNcyJ9.kzcRQ_3oUAK5M2rtPonZAg",
+    "mapboxStyle": "mapbox://styles/brendan6/ciufmdelf007v2iplttawsa2a"
+  },
+  "release": {
+    "name": "release",
+    "api": {
+      "main": {
+        "apiEndpoint": "//api.namara.io/v0",
+        "baseUrl": "//api.namara.io"
+      },
+      "marketplace": {
+        "apiEndpoint": "//api.namara.io/v0",
+        "baseUrl": "//api.namara.io"
+      }
+    },
+    "mapboxAPIToken": "pk.eyJ1IjoiYnJlbmRhbjYiLCJhIjoiWEgyemVNcyJ9.kzcRQ_3oUAK5M2rtPonZAg",
+    "mapboxStyle": "mapbox://styles/brendan6/ciufmdelf007v2iplttawsa2a"
+  },
+  "production": {
+    "name": "production",
+    "api": {
+      "main": {
+        "apiEndpoint": "//api.namara.io/v0",
+        "baseUrl": "//api.namara.io"
+      },
+      "marketplace": {
+        "apiEndpoint": "//api.namara.io/v0",
+        "baseUrl": "//api.namara.io"
+      }
+    },
+    "mapboxAPIToken": "pk.eyJ1IjoiYnJlbmRhbjYiLCJhIjoiWEgyemVNcyJ9.kzcRQ_3oUAK5M2rtPonZAg",
+    "mapboxStyle": "mapbox://styles/brendan6/ciufmdelf007v2iplttawsa2a"
+  },
+  "docker": {
+    "name": "docker",
+    "api": {
+      "main": {
+        "apiEndpoint": "//$API_HOST/v0",
+        "baseUrl": "//$API_HOST"
+      },
+      "marketplace": {
+        "apiEndpoint": "//$API_HOST/v0",
+        "baseUrl": "//$API_HOST"
+      }
+    },
+    "mapboxAPIToken": "pk.eyJ1IjoiYnJlbmRhbjYiLCJhIjoiWEgyemVNcyJ9.kzcRQ_3oUAK5M2rtPonZAg",
+    "mapboxStyle": "mapbox://styles/brendan6/ciufmdelf007v2iplttawsa2a"
+  }
+}

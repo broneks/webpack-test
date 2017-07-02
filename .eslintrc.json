@@ -1,0 +1,52 @@
+{
+  "extends": "airbnb",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "!app/**/*.js"
+      ]
+    }],
+    "no-unused-vars": ["error", {
+      "varsIgnorePattern": "^[A-Z][a-z]+(?:[A-Z][a-z]+)*" // PascalCase (react class names)
+    }],
+    "space-before-function-paren": ["error", "always"],
+    "accessor-pairs": ["error", { "getWithoutSet": false }],
+
+    "prefer-arrow-callback": 0,
+    "class-methods-use-this": 0,
+    "no-unused-expressions": 0,
+    "no-underscore-dangle": 0,
+    "react/forbid-prop-types": 0,
+    // re-enable once we get rid of bower
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    // re-enable once we start using modules
+    "no-undef": 0,
+    "react/jsx-no-undef": 0
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true,
+    "jquery": true,
+    "protractor": true
+  },
+  "globals": {
+    "inject": false,
+    "_": false,
+    "moment": false,
+    "angular": false,
+    "React": false,
+    "ReactDOM": false,
+    "ReactVirtualized": false,
+    "Datepicker": false
+  }
+}
