@@ -30,10 +30,12 @@ const config = {
       views: paths.views,
     },
   },
-  entry: './scripts/app.js',
+  entry: {
+    app: './scripts/app.js',
+  },
   output: {
     path: paths.dist,
-    filename: 'app.[chunkhash].js',
+    filename: '[name].[chunkhash].js',
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
@@ -44,7 +46,7 @@ const config = {
     extractStylesPlugin,
     new HtmlWebpackPlugin({
       hash: false,
-      inject: true,
+      inject: 'body',
       template: 'index.html',
     }),
   ],
@@ -74,18 +76,32 @@ const config = {
         // fonts
         test: /\.(eot|ttf|woff|woff2)$/,
         exclude: path.resolve(paths.app, 'index.html'),
-        loader: 'file-loader?name=[path][name].[hash].[ext]',
+        loader: 'file-loader?name=[path][name].[ext]',
       },
       {
         // images
         test: /\.(jpe?g|png|gif|svg)$/,
         use: [
-          'file-loader?name=[path][name].[hash].[ext]',
+          'file-loader?name=[path][name].[ext]',
           'image-webpack-loader',
         ],
       },
       {
-        test: /index.html$/,
+        test: /\.html$/,
+        exclude: path.resolve(paths.app, 'index.html'),
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          },
+        }, {
+          loader: 'extract-loader',
+        }, {
+          loader: 'html-loader',
+        }],
+      },
+      {
+        test: /^index.html$/,
         loader: 'html-loader',
       },
       {
