@@ -5,11 +5,15 @@
   "description": "",
   "main": "app/scripts/app.js",
   "scripts": {
-    "start": "webpack --watch",
-    "build": "npm run clean && webpack -p",
+    "build": "npm run clean && webpack --optimize-minimize ",
+    "build:dev": "npm run clean && webpack --config config/webpack.config.dev.js --progress --colors",
+    "build:prod": "npm run clean && webpack --config config/webpack.config.prod.js --progress --colors",
+    "build:test": "npm run clean && webpack --config config/webpack.config.test.js --progress --colors",
     "clean": "rimraf dist",
     "lint": "eslint",
-    "lint:app": "eslint app"
+    "lint:app": "eslint app",
+    "server:dev": "webpack-dev-server --config config/webpack.config.dev.js --open --progress --profile --watch --colors",
+    "start": "npm run server:dev"
   },
   "author": "Bronek Szulc",
   "license": "ISC",
@@ -40,6 +44,11 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack": "^3.0.0"
+    "webpack": "^3.0.0",
+    "webpack-bundle-analyzer": "^2.8.2",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
   }
 }

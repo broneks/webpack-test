@@ -1,3 +1,5 @@
+/* must be at project root level */
+
 module.exports = {
   plugins: {
     autoprefixer: {
