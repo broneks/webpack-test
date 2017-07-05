@@ -5,13 +5,13 @@ switch (process.env.APP_ENV) {
   case 'release':
   case 'production':
   case 'docker':
-    module.exports = require('./config/webpack.prod')();
+    module.exports = require('./config/webpack.prod');
     break;
 
   case 'test':
-    module.exports = require('./config/webpack.test')();
+    module.exports = require('./config/webpack.test');
     break;
 
   default:
-    module.exports = require('./config/webpack.dev')();
+    module.exports = require('./config/webpack.dev');
 }

@@ -34,7 +34,7 @@ const config = {
       ),
     }),
     new webpack.DefinePlugin({
-      ENV: JSON.stringify(appConfig.local),
+      APP_ENV: JSON.stringify(appConfig.local),
     }),
     new HtmlWebpackPlugin({
       hash: false,

@@ -6,7 +6,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const appConfig = require('../config.json');
 const paths = require('./paths');
 
-const ENV = process.env.APP_ENV;
+const APP_ENV = process.env.APP_ENV;
 
 const extractStylesPlugin = new ExtractTextPlugin({
   filename: 'app.[contenthash].css',
@@ -42,7 +42,7 @@ const config = {
       ),
     }),
     new webpack.DefinePlugin({
-      ENV: JSON.stringify(appConfig[ENV || 'production']),
+      APP_ENV: JSON.stringify(appConfig[APP_ENV || 'production']),
     }),
     extractStylesPlugin,
     new HtmlWebpackPlugin({
