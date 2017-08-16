@@ -44,11 +44,13 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack": "^3.0.0",
-    "webpack-bundle-analyzer": "^2.8.2",
-    "webpack-dev-server": "^2.5.0"
+    "webpack": "^3.5.5",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "angular": "1.6.5",
+    "angular-ui-router": "~0.4.2",
     "lodash": "^4.17.4"
   }
 }
