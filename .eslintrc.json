@@ -29,7 +29,6 @@
     // re-enable once we get rid of bower
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0,
-    // re-enable once we start using modules
     "no-undef": 0,
     "react/jsx-no-undef": 0
   },
@@ -41,13 +40,6 @@
     "protractor": true
   },
   "globals": {
-    "inject": false,
-    "_": false,
-    "moment": false,
-    "angular": false,
-    "React": false,
-    "ReactDOM": false,
-    "ReactVirtualized": false,
-    "Datepicker": false
+    "inject": false
   }
 }

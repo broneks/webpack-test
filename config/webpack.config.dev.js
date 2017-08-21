@@ -11,7 +11,8 @@ const config = {
       app: paths.dir.app,
       styles: paths.dir.styles,
       views: paths.dir.views,
-      assets: paths.dir.assets,
+      fonts: paths.dir.fonts,
+      images: paths.dir.images,
     },
   },
   entry: {
@@ -25,7 +26,10 @@ const config = {
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: false,
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'vendor.js',
@@ -41,7 +45,6 @@ const config = {
       inject: 'body',
       template: 'index.html',
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [

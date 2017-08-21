@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 const appConfig = require('../config.json');
 const paths = require('./paths');
@@ -19,7 +19,8 @@ const config = {
       app: paths.dir.app,
       styles: paths.dir.styles,
       views: paths.dir.views,
-      assets: paths.dir.assets,
+      fonts: paths.dir.fonts,
+      images: paths.dir.images,
     },
   },
   entry: {
@@ -32,8 +33,9 @@ const config = {
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.HashedModuleIdsPlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: false,
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'vendor.[hash].js',
@@ -51,8 +53,8 @@ const config = {
       template: 'index.html',
       chunks: ['vendor', 'app'],
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
+    new ManifestPlugin({
+      fileName: 'cache-manifest.json',
     }),
   ],
   module: {
@@ -86,7 +88,7 @@ const config = {
         // images
         test: /\.(jpe?g|png|gif|svg)$/,
         use: [
-          'file-loader?name=[path][name].[ext]',
+          'file-loader?name=[path][name].[hash].[ext]',
           'image-webpack-loader',
         ],
       },
@@ -94,7 +96,7 @@ const config = {
         test: /\.html$/,
         exclude: paths.file.index,
         use: [{
-          loader: 'file-loader?name=[path][name].[ext]',
+          loader: 'file-loader?name=[path][name].[hash].[ext]',
         }, {
           loader: 'extract-loader',
         }, {

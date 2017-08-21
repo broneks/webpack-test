@@ -7,6 +7,8 @@ module.exports = {
     styles: path.resolve(__dirname, '../app/styles'),
     views: path.resolve(__dirname, '../app/views'),
     assets: path.resolve(__dirname, '../app/assets'),
+    images: path.resolve(__dirname, '../app/assets/images'),
+    fonts: path.resolve(__dirname, '../app/assets/fonts'),
   },
   file: {
     index: path.resolve(__dirname, '../app/index.html'),
