@@ -20,6 +20,7 @@
     "space-before-function-paren": ["error", "always"],
     "accessor-pairs": ["error", { "getWithoutSet": false }],
 
+    "import/prefer-default-export": 0,
     "prefer-arrow-callback": 0,
     "class-methods-use-this": 0,
     "no-unused-expressions": 0,

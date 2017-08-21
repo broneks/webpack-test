@@ -18,8 +18,8 @@ const config = {
     alias: {
       app: paths.dir.app,
       styles: paths.dir.styles,
-      images: paths.dir.images,
       views: paths.dir.views,
+      assets: paths.dir.assets,
     },
   },
   entry: {

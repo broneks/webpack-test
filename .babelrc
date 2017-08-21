@@ -10,6 +10,7 @@
   "plugins": [
     "transform-class-properties",
     "transform-object-rest-spread",
-    "transform-exponentiation-operator"
+    "transform-exponentiation-operator",
+    "angularjs-annotate"
   ]
 }

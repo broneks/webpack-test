@@ -10,8 +10,8 @@ const config = {
     alias: {
       app: paths.dir.app,
       styles: paths.dir.styles,
-      images: paths.dir.images,
       views: paths.dir.views,
+      assets: paths.dir.assets,
     },
   },
   entry: {
@@ -41,6 +41,7 @@ const config = {
       inject: 'body',
       template: 'index.html',
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
@@ -79,8 +80,6 @@ const config = {
         exclude: paths.file.index,
         use: [{
           loader: 'file-loader?name=[path][name].[ext]',
-        }, {
-          loader: 'html-loader',
         }],
       },
       {
