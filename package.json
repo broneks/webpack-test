@@ -7,7 +7,7 @@
   "scripts": {
     "test": "./node_modules/.bin/karma start karma.conf.js --single-run",
     "test:watch": "./node_modules/.bin/karma start karma.conf.js --auto-watch",
-    "build": "npm run clean && webpack --optimize-minimize ",
+    "build": "npm run clean && webpack --progress --colors",
     "build:dev": "npm run clean && webpack --config config/webpack.config.dev.js --progress --colors",
     "build:prod": "npm run clean && webpack --config config/webpack.config.prod.js --progress --colors",
     "build:test": "npm run clean && webpack --config config/webpack.config.test.js --progress --colors",
