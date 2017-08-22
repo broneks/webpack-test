@@ -14,7 +14,7 @@ import 'styles/main.scss';
 
 import 'images/mountains.png';
 
-import { AuthModule } from './auth/auth.module';
+import authModule from './auth/auth.module';
 
 import routing from './config/routing';
 
@@ -25,7 +25,7 @@ import auth from './routes/auth';
 angular
   .module('TestApp', [
     uiRouter,
-    AuthModule,
+    authModule,
   ])
   .config(routing)
   .config(root)
