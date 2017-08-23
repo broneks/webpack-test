@@ -1,27 +1,30 @@
 const webpack = require('./config/webpack.config.test');
 
 module.exports = function karmaConfig (config) {
-  config.set({
+  const settings = {
     webpack,
+    webpackMiddleware: {
+      stats: 'minimal',
+    },
     frameworks: ['jasmine'],
     preprocessors: {
-      'app/scripts/**/*.js': ['coverage'],
       'app/scripts/tests.webpack.js': ['webpack'],
       'app/**/*.html': ['ng-html2js'],
     },
-    coverageReporter: {
-      type: 'html',
-      dir: 'coverage/',
+    coverageIstanbulReporter: {
+      reports: ['html'],
+      fixWebpackSourcePaths: true,
     },
     files: [
       'app/scripts/tests.webpack.js',
     ],
-    reporters: ['progress', 'coverage'],
-    port: 9876,
-    colors: true,
-    failOnEmptyTestSuite: false,
-    logLevel: config.LOG_INFO,
+    reporters: ['progress', 'coverage-istanbul'],
     browsers: ['PhantomJS'],
-    captureTimeout: 60000,
-  });
+  };
+
+  if (!config.autoWatch) {
+    settings.coverageIstanbulReporter.reports.push('text-summary');
+  }
+
+  config.set(settings);
 };

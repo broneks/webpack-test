@@ -22,6 +22,11 @@ const config = {
   module: {
     rules: [
       {
+        test: /^(?!.*test\.js).*\.js$/,
+        exclude: /(node_modules|bower_components|tests.webpack.js)/,
+        loader: 'istanbul-instrumenter-loader',
+      },
+      {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         use: [
@@ -30,9 +35,6 @@ const config = {
         ],
       },
     ],
-  },
-  stats: {
-    modules: false,
   },
   devtool: 'inline-source-map',
 };
